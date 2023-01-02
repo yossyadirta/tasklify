@@ -1,20 +1,13 @@
-import { Router, Request, Response } from "express";
-import IRouter from "./RouterInterface";
+import BaseRoutes from "./BaseRouter";
+import UserController from "../controllers/UserController";
 
-class UserRoutes implements IRouter {
-  public router: Router;
-  constructor() {
-    this.router = Router();
-    this.routes();
-  }
+class UserRoutes extends BaseRoutes {
   public routes(): void {
-    this.router.get("/", (req: Request, res: Response) => {
-      res.send("Ini adalah endpoint users");
-    });
-
-    this.router.post("/", (req: Request, res: Response) => {
-      res.send(req.body);
-    });
+    this.router.get("/", UserController.index);
+    this.router.post("/", UserController.create);
+    this.router.get("/:id", UserController.show);
+    this.router.put("/:id", UserController.update);
+    this.router.delete("/:id", UserController.delete);
   }
 }
 
