@@ -39,7 +39,7 @@ class App {
   }
 }
 
-const port: number = 8000;
+const port: string | number = process.env.PORT || 8000;
 
 const app = new App().app;
 app.listen(port, () => {
