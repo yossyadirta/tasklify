@@ -12,7 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 module.exports = {
     up(queryInterface, Sequelize) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield queryInterface.createTable("Todos", {
+            yield queryInterface.createTable("todos", {
                 id: {
                     allowNull: false,
                     autoIncrement: true,
@@ -22,7 +22,7 @@ module.exports = {
                 user_id: {
                     type: Sequelize.INTEGER,
                     references: {
-                        model: "Users",
+                        model: "users",
                         key: "id",
                     },
                     allowNull: false,
@@ -46,7 +46,7 @@ module.exports = {
     },
     down(queryInterface, Sequelize) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield queryInterface.dropTable("Todos");
+            yield queryInterface.dropTable("todos");
         });
     },
 };

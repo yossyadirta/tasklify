@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,33 +12,33 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 module.exports = {
     up(queryInterface, Sequelize) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield queryInterface.createTable('Users', {
+            yield queryInterface.createTable("users", {
                 id: {
                     allowNull: false,
                     autoIncrement: true,
                     primaryKey: true,
-                    type: Sequelize.INTEGER
+                    type: Sequelize.INTEGER,
                 },
                 username: {
-                    type: Sequelize.STRING
+                    type: Sequelize.STRING,
                 },
                 password: {
-                    type: Sequelize.STRING
+                    type: Sequelize.STRING,
                 },
                 created_at: {
                     allowNull: false,
-                    type: Sequelize.DATE
+                    type: Sequelize.DATE,
                 },
                 updated_at: {
                     allowNull: false,
-                    type: Sequelize.DATE
-                }
+                    type: Sequelize.DATE,
+                },
             });
         });
     },
     down(queryInterface, Sequelize) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield queryInterface.dropTable('Users');
+            yield queryInterface.dropTable("users");
         });
-    }
+    },
 };
