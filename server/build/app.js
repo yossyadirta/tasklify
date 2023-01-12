@@ -18,7 +18,9 @@ class App {
         this.app = (0, express_1.default)();
         this.plugins();
         this.routes();
-        (0, dotenv_1.config)();
+        if (process.env.NODE_ENV !== "production") {
+            (0, dotenv_1.config)();
+        }
     }
     plugins() {
         this.app.use(body_parser_1.default.json());
@@ -40,10 +42,4 @@ const port = process.env.PORT || 8000;
 const app = new App().app;
 app.listen(port, () => {
     console.log("Port: " + port);
-    // console.log(process.env.DB_HOST);
 });
-// const app = express();
-// app.route("/").get((req, res) => {
-//   res.send("Hello World");
-// });
-// app.listen(8000);

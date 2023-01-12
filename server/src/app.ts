@@ -17,7 +17,9 @@ class App {
     this.app = express();
     this.plugins();
     this.routes();
-    dotenv();
+    if (process.env.NODE_ENV !== "production") {
+      dotenv();
+    }
   }
 
   protected plugins(): void {
@@ -44,13 +46,4 @@ const port: string | number = process.env.PORT || 8000;
 const app = new App().app;
 app.listen(port, () => {
   console.log("Port: " + port);
-  // console.log(process.env.DB_HOST);
 });
-
-// const app = express();
-
-// app.route("/").get((req, res) => {
-//   res.send("Hello World");
-// });
-
-// app.listen(8000);
