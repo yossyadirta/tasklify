@@ -8,7 +8,7 @@
     "tsc": "rm -rf build/ && tsc",
     "ts": "rm -rf build/ && tsc -w",
     "dev": "nodemon ./build/app.js",
-    "start": "node ./build/app.js"
+    "start": "node build/app.js"
   },
   "keywords": [],
   "author": "",
