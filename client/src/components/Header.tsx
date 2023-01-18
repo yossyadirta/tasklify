@@ -1,3 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
-  return <h1>Hello this is Header Component</h1>;
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }

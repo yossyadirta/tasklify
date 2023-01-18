@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 export default function Home() {
-  return <h1>Hello this is Home Page</h1>;
+  return <Outlet />;
 }
